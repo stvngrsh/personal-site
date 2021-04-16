@@ -1,0 +1,62 @@
+<article class="feed {{post_class}}">
+    <div class="feed-calendar">
+        {{#has tag='portfolio'}}
+        <div class="feed-emoji">
+            {{#has tag='#startup'}}
+            🚀
+            {{else has tag='#mobile, #mobile-app'}}
+            📱
+            {{else has tag='#webstore'}}
+            🛍️
+            {{else has tag='#prototype'}}
+            💅
+            {{else has tag='#website'}}
+            🖥️
+            {{/has}}
+        </div>
+        {{else has tag='work'}}
+        <div class="feed-logo">
+            <img src={{feature_image}} />
+        </div>
+        {{else}}
+        <div class="feed-calendar-month">
+            {{date published_at format="MMM"}}
+        </div>
+        <div class="feed-calendar-day">
+            {{date published_at format="DD"}}
+        </div>
+        {{/has}}
+    </div>
+    <h2 class="feed-title">{{title}}</h2>
+    <div class="feed-right">
+        {{#if @labs.members}}
+        <svg class="icon feed-visibility feed-visibility-{{visibility}}">
+            <use xlink:href="#star"></use>
+        </svg>
+        {{/if}}
+        {{#has tag='portfolio'}}
+        <div class="feed-length">
+            {{tags visibility="all" autolink="false" from="2" to="2"}}
+        </div>
+        {{else has tag='work'}}
+        <div class="feed-length">
+            {{date published_at format="MMM YYYY"}}
+        </div>
+        {{else}}
+        <div class="feed-length">
+            {{reading_time}}
+        </div>
+        {{/has}}
+    </div>
+    {{#has tag='#external-link'}}
+    <svg class="icon feed-icon">
+        <use xlink:href="#external-link"></use>
+    </svg>
+    <a class="u-permalink" href="{{excerpt}}"" aria-label=" {{title}}" target="_blank" rel="noopener noreferrer"></a>
+    {{else}}
+    <svg class="icon feed-icon">
+        <use xlink:href="#chevron-right"></use>
+    </svg>
+    <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+    {{/has}}
+</article>

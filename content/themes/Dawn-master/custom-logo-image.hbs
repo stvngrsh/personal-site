@@ -1,0 +1,12 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+        {{#post}}
+        {{> content logo_image=true no_image=true}}
+        {{/post}}
+        {{#is "post"}}
+        {{!-- {{> related}} --}}
+        {{/is}}
+    </main>
+</div>

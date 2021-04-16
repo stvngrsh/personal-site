@@ -1,0 +1,51 @@
+{{!< default}} <div class="content-area container medium">
+    <main class="site-main">
+        {{#get "posts" filter="primary_tag:portfolio" include="tags,authors" order="published_at desc"}}
+        {{#if posts}}
+        <h3>#Portfolio</h3>
+        <div class="post-feed">
+            {{#foreach posts visibility="all" limit="3"}}
+            {{> "loop"}}
+            {{/foreach}}
+        </div>
+        {{#if posts.[3]}}
+        <div style="display:flex;justify-content:center">
+            <a class="button button-secondary" href="/portfolio/">View All</a>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{/get}}
+
+        {{#get "posts" filter="primary_tag:blog" include="tags,authors" order="published_at desc"}}
+        {{#if posts}}
+        <h3 style="margin-top:40px;">#Blog</h3>
+        <div class="post-feed">
+            {{#foreach posts visibility="all" limit="3"}}
+            {{> "loop"}}
+            {{/foreach}}
+        </div>
+        {{#if posts.[3]}}
+        <div style="display:flex;justify-content:center">
+            <a class="button button-secondary" href="/portfolio/">View All</a>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{/get}}
+
+        {{#get "posts" filter="primary_tag:work" include="tags,authors" order="published_at desc"}}
+        {{#if posts}}
+        <h3 style="margin-top:40px;">#Work</h3>
+        <div class="post-feed">
+            {{#foreach posts visibility="all" limit="3"}}
+            {{> "loop"}}
+            {{/foreach}}
+        </div>
+        {{#if posts.[3]}}
+        <div style="display:flex;justify-content:center">
+            <a class="button button-secondary" href="/blog/">View All</a>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{/get}}
+    </main>
+    </div>

@@ -1,0 +1,40 @@
+<div class="cover container medium">
+    <div class="cover-content">
+        {{!-- {{#if @site.icon}}
+        <div class="cover-icon">
+            <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+        </div>
+        {{/if}} --}}
+
+        {{#if @site.title}}
+        <h1 class="cover-title">{{@site.title}}</h1>
+        {{/if}}
+
+        {{#if @site.description}}
+        <h2 class="cover-description">{{@site.description}}</h2>
+        {{/if}}
+
+        {{#if @site.navigation}}
+        {{!-- <nav class="main-nav hidden-xs hidden-sm hidden-md"> --}}
+        <nav class="main-nav">
+            {{navigation}}
+            {{!-- {{#if @labs.members}}
+            <button class="button-icon menu-item-button js-modal" data-modal="search" aria-label="Search">
+                <svg class="icon">
+                    <use xlink:href="#magnify"></use>
+                </svg>
+            </button>
+            {{/if}} --}}
+        </nav>
+        {{/if}}
+
+        {{!-- {{#if @labs.members}}
+        {{#unless @member}}
+        <div class="cover-cta">
+            <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
+            <button class="button button-secondary members-login" data-portal="signin">Login</button>
+        </div>
+        {{/unless}}
+        {{/if}} --}}
+    </div>
+</div>

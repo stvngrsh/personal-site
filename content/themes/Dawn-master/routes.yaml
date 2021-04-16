@@ -1,0 +1,28 @@
+routes:
+  /: index
+  /subscribe/: members/subscribe
+  /signup/: members/signup
+  /signin/: members/signin
+  /account/: members/account
+  /upgrade/: members/upgrade
+
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    template: tag
+    filter: primary_tag:blog
+    data: tag.blog
+  /portfolio/:
+    permalink: /portfolio/{slug}/
+    template: tag
+    filter: primary_tag:portfolio
+    data: tag.portfolio
+  /work/:
+    permalink: /work/{slug}/
+    template: tag
+    filter: primary_tag:work
+    data: tag.work
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
